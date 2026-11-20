@@ -154,6 +154,13 @@ released `TINY.BIN`. The core reads the network size from the file header,
 so a retrained network of another size works without recompiling, within
 the `TINY_MAX*` limits.
 
+## Credits
+
+Fork of [TINY 2.1 by WollyMonjac](https://github.com/WollyMonjac/Tiny-2.1),
+the original transformer for DOS and Turbo C 2.0. The trained network, the
+training kit and the inference maths come from there. This fork splits the
+inference into a portable C core and adds a terminal interface.
+
 ## Licence
 
 Code: MIT (`LICENSE`). Three data files derived from public datasets keep
