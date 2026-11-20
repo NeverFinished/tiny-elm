@@ -27,12 +27,8 @@ $(LIB): core/tiny.c core/tiny.h | $(BUILD)
 $(CLI): cli/tiny_cli.c core/tiny.c core/tiny.h | $(BUILD)
 	$(CC) $(CFLAGS) -Icore -o $@ cli/tiny_cli.c core/tiny.c -lm
 
-# Reference: the original DOS source built in its plain-text mode.
-$(BUILD)/tiny_dos: dos/TINY.C | $(BUILD)
-	$(CC) -O2 -w -o $@ dos/TINY.C -lm
-
-# Compare answers (creativity 0) of the new core with the original program.
-test: $(CLI) $(BUILD)/tiny_dos
+# Answers at creativity 0 must match tests/expected.txt.
+test: $(CLI)
 	./tests/compare.sh
 
 run: $(LIB)

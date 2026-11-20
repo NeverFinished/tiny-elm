@@ -3,7 +3,7 @@
   python3 -I train2.py bench                       speed test of model sizes
   python3 -I train2.py train MINUTES OUT.pt [--from TINY.BIN]
   python3 -I train2.py eval  MODEL.pt|TINY.BIN     score on held-back questions
-  python3 -I train2.py export MODEL.pt TINY.BIN    write the DOS weight file
+  python3 -I train2.py export MODEL.pt TINY.BIN    write the TINY.BIN weight file
 
 The model reads and writes one letter at a time (ASCII 32..126 plus newline)."""
 import sys, os, time, math, random, struct, re, collections

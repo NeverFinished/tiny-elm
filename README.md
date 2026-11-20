@@ -1,16 +1,14 @@
 # TINY 2.1: a tiny transformer with a terminal interface
 
-![TINY 2.1 running under DOS](tiny21.png)
+![TINY 2.1 in the terminal](tiny.png)
 
 TINY is a small question-answering transformer that reads and writes one
-letter at a time. Version 2.1 began as a Turbo C program for DOS. It is now
-split into:
+letter at a time. It is split into:
 
 - a **portable C99 core** (`core/`): no heap, no stdio, no globals.
   Meant to be ported to embedded platforms.
-- a **Textual terminal interface** in Python (`tui/`). It has the neon look
-  of the DOS version: chat, a live neural monitor and letter-by-letter
-  decoding.
+- a **Textual terminal interface** in Python (`tui/`): neon chat, a live
+  neural monitor and letter-by-letter decoding.
 - a **plain command-line front end** in C (`cli/`), for scripting and as
   an example of using the core.
 
@@ -71,9 +69,8 @@ cli/tiny_cli.c        plain stdin/stdout front end
 tui/tiny.py           ctypes binding to build/libtiny
 tui/app.py            Textual application
 model/TINY.BIN        the trained network
-tests/compare.sh      regression test against the original DOS code
+tests/compare.sh      regression test (answers in tests/expected.txt)
 training/             facts, data generator and PyTorch training script
-dos/                  the original DOS version (legacy, to be removed)
 ```
 
 ## The C core API
@@ -128,9 +125,9 @@ Every function returns a negative `TINY_ERR_*` code on error;
 make test
 ```
 
-This builds the original `dos/TINY.C` in its plain-text mode with the host
-compiler. It then asks both programs the questions in `tests/questions.txt`
-at creativity 0 and checks that the answers are identical.
+This asks the questions in `tests/questions.txt` at creativity 0 and checks
+that the answers match `tests/expected.txt`, which was recorded from the
+original 2.1 release.
 
 ## Train it yourself
 

@@ -15,7 +15,7 @@ from textual.widgets import Input, Static
 
 from .tiny import MAXQ, Tiny
 
-# neon palette (from the DOS version)
+# neon palette
 CYAN = "#33ffff"
 CYAN2 = "#0f8c9c"
 PINK = "#ff55dd"

@@ -1,6 +1,5 @@
 /* tiny.c - TINY 2 transformer core. See tiny.h.
-   Portable C99: needs <math.h> (sqrtf, expf) and <string.h> (memcpy) only.
-   Ported from the DOS version (dos/TINY.C); same maths, same TINY.BIN. */
+   Portable C99: needs <math.h> (sqrtf, expf) and <string.h> (memcpy) only. */
 
 #include "tiny.h"
 #include <math.h>
